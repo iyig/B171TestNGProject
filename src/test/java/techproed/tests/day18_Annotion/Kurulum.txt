@@ -1,0 +1,7 @@
+TESTNG FRAMEWORK KURULUMU:
+1-Selenium-Java,WebDriverManager ve TestNG depencency lerini pom.xml dosyasına koyarız
+2-  test>java>pages --> locatelerimiiz bu package altındaki classlarda tutarız
+    test>java>tests --> test package altındaki classlarda test methodlarımızı oluşturu test scriptlerimizi yazarız.
+    test>java>utilities -->ultilities package altında Configurations gibi dosyalarımız ve Driver,
+    reuseble methdolarımızın olduğu classlarımız olur Class ismi ile yada obje ile
+    bu classlardaki methodları kullanırız
