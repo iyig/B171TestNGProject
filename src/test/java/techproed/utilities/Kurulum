@@ -16,3 +16,7 @@ TESTNG FRAMEWORK KULUMU:
 
     4-Pages package'ı altında locatini alacağımız sayfa için bir class oluştururuz.AmazonPage class'ı içinde
     ayrıntılı not yazıldı.
+
+    5-TestNG de temel test datalarımızı .properties uzantili dosyada tutarız.Bunun icin proje seviyesinde sağ klick
+   yapıp bir dosya oluştururuz. Bu dosyadaki dataları okuyabilmesi için utlities package'ı altında ConfigReader isminde bir class oluşturup
+    class içinde de belirttigimiz gibi .properties uzantılı dosyadaki dataları test classlarımızda okuyabiliriz

@@ -18,7 +18,11 @@ public class C04_PageKullanimi {
         sourcePage.password.sendKeys("admin123");
         sourcePage.loginButton.click();
         Thread.sleep(3000);
+//Login TEstinin başarılı oldugunu test et
+        Assert.assertTrue(sourcePage.verify.isDisplayed());
 
+        //sayfayı kapatınız
+        Driver.closeDriver();
     }
 }
 
