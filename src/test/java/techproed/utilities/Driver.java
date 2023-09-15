@@ -8,11 +8,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
-
 public class Driver {
+    private Driver() {
+        /*
+        SINGLETON PATTERN (Tekli kullanım) için gizli const.'ı private yaptık
+         */
+    }
     static WebDriver driver;
-
-    public static WebDriver getDriver() {
+    public static WebDriver getDriver(){
         /*
             Driver'i her çağırdığımızda yeni bir pencere açmamasi için bir if bloğu ile bu işi çözdük.
         if(driver == null) ile eğer driver'a değer atanmamış ise driver'a değerleri ata, tekrar driver
@@ -24,8 +27,8 @@ public class Driver {
         driver ayarlarını değiştirmek yerine aşağıdaki gibi switch case ile .properties dosyasında browser
         olarak belirttiğimiz key'in değeri ne ise browser o driver ile çalışacaktır
          */
-        if (driver == null) {
-            switch (ConfigReader.getProperty("browser")) {
+        if (driver==null){
+            switch (ConfigReader.getProperty("browser")){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -45,17 +48,14 @@ public class Driver {
                 default:
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
-
             }
-
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
         return driver;
     }
 
-
-    public static void closeDriver() {
+    public static void closeDriver(){
         /*
             Driver'i direk kapatip tekrar bir sayfaya gitmek istersek hata alırız. Çünkü
         Driver'in yeniden oluşma şartı değer atanmamış olması. Close yaptıktan sonra driver hala
@@ -63,17 +63,15 @@ public class Driver {
         methodundaki oluşma şartına uyabilmesi için driver'i tekrar null' a eşitlememiz yani
         kapandıktan sonra boş olduğunu belirtmemiz gerekir
          */
-        if (driver != null) {
+        if(driver!=null){
             driver.close();
             driver = null;
         }
     }
-
-    public static void quitDriver() {
-        if (driver != null) {
+    public static void quitDriver(){
+        if(driver!=null){
             driver.quit();
             driver = null;
-
         }
     }
 }

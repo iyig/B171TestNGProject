@@ -1,4 +1,4 @@
-package techproed.tests.day20_Properties;
+package techproed.tests.day21_SmokeTest_Excel;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -8,9 +8,9 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class C04_PositifLogintest {
+public class C01_PositifLogintest {
 
-    @Test
+    @Test(groups  ="smoke")
     public void positifTest() {
         //Name: US100201_Admin_Login
         //Description:
@@ -18,6 +18,7 @@ public class C04_PositifLogintest {
         //Acceptance Criteria:
         //Admin olarak, uygulamaya giriş yapabilmeliyim
         //https://www.bluerentalcars.com/
+
         Driver.getDriver().get(ConfigReader.getProperty("blueRentalUrl"));
         BlueRentalPage rentalPage = new BlueRentalPage();
         rentalPage.loginButton.click();
