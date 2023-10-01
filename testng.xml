@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="BelirliMethodlarıCalıştırma">
+    <test name="C=2_ListenersTest.java">
         <classes>
-            <class name="techproed.tests.day21_SmokeTest_Excel.C01_PositifLogintest">
+            <class name="techproed.tests.day23_Listeners.C01_ListenersTest">
                 <methods>
-                    <include name="positifTest"/>
+                    <include name="test01"/>
+                    <include name="test02"/>
                 </methods>
             </class>
-            <class name="techproed.tests.day21_SmokeTest_Excel.C02_NegatifTest">
-                <methods>
-                    <include name="negatifTest"/>
-
-                </methods>
-            </class>
-
         </classes>
     </test>
 </suite>
